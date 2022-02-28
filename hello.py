@@ -1,3 +1,4 @@
 print ("hello")
 
-t = 5
+r = 5
+print (r)
