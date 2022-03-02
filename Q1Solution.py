@@ -1,7 +1,6 @@
 def f(name):    
-    r = range(len(name))
-    for i in r:
+    for i in range(len(name)):
         for j in range(i,len(name)):
-            print(name[i:j+1])
-
+            ss = name[i:j+1]
+            print(ss + "   " + str(sum([ord(s) for s in ss])))
 f("tamer")
