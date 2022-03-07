@@ -4,7 +4,7 @@
 
 def search_iterative1(arr, x):
     index = 0
-    for index, y in enumerate(arr):
+    for y in arr:
         if y == x:
             return index
         index += 1
@@ -15,7 +15,12 @@ def search_iterative2(arr, x):
         if y == x:
             return index
     return -1;
+
+
+# (n-1)! n -> n!
     
+# if arr is sorted in nondecreasing order
+
 def binary_search_iterative(arr, x):
     low = 0
     high = len(arr) - 1
@@ -28,9 +33,8 @@ def binary_search_iterative(arr, x):
             high = mid - 1
         else:
             return mid
- 
     return -1
-    
+   
 def binary_search_recursive(arr, x):
     if len(arr) == 0:
         return -1;
@@ -40,11 +44,15 @@ def binary_search_recursive(arr, x):
         return midindex
     elif arr[midindex] > x:
         return binary_search_recursive(arr[:midindex], x)
-    elif arr[midindex] < x:
-        return midindex + 1 + binary_search_recursive(arr[midindex + 1:], x)    
-    else:
-        return -1
+    else: #arr[midindex] < x:
+        retindex = binary_search_recursive(arr[midindex + 1:], x)
+        if retindex == -1:
+            return -1
+        else:
+            return midindex + 1 + retindex    
 
+def binary_search_recursive(low, high, x):
+    pass
 
-arr = [1,3,5]
+arr = [1,3,5,9]
 print(binary_search_recursive(arr, 5))
