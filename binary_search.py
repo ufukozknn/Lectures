@@ -1,4 +1,6 @@
-
+# Write a function to find out if an integer value exists in a given list of integers.
+# The function is expected to return the index of the integer in the array if it exists. 
+# Otherwise the function should return value -1;  
 
 def search_iterative1(arr, x):
     index = 0
